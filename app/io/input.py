@@ -8,7 +8,8 @@ def input_from_console():
     Returns:
         str: The input text from the user.
     """
-    pass
+    text = input("Enter text: ")
+    return text
 
 
 def read_from_file_builtin(filename):
@@ -21,7 +22,9 @@ def read_from_file_builtin(filename):
     Returns:
         str: The content of the file.
     """
-    pass
+    with open(filename, 'r', encoding='utf-8') as file:
+        content = file.read()
+    return content
 
 
 def read_from_file_pandas(filename):
@@ -34,4 +37,5 @@ def read_from_file_pandas(filename):
     Returns:
         list: The content of the file.
     """
-    pass
+    data = pd.read_csv(filename, header=None)
+    return data[0].tolist()

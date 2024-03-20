@@ -5,7 +5,7 @@ def output_to_console(text):
     Args:
         text (str): The text to be printed.
     """
-    pass
+    print(text)
 
 
 def write_to_file_builtin(filename, content):
@@ -16,4 +16,5 @@ def write_to_file_builtin(filename, content):
         filename (str): The name of the file where the content will be written.
         content (str): The content to be written to the file.
     """
-    pass
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(content)
